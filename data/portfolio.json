@@ -1,0 +1,20 @@
+[
+    {
+        "image": "image1.png",
+        "title": "Booki",
+        "text": "Intégration d'une maquette responsive en HTML & CSS pour une plateforme de réservation d'hébergements et d'activités.",
+        "link": "booki.html"
+    },
+    {
+        "image": "image2.png",
+        "title": "Print It",
+        "text": "Ajout d'un carrousel interactif en JavaScript sur un site statique existant : gestion des événements, manipulation du DOM et défilement infini.",
+        "link": "print-it.html"
+    },
+    {
+        "image": "image3.png",
+        "title": "Kasa",
+        "text": "Application React de location d'appartements entre particuliers : composants réutilisables, React Router, hooks personnalisés et suite de tests unitaires.",
+        "link": "kasa.html"
+    }
+]

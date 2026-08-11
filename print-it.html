@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Print It - Projet Développement | Natalia Petrakova</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Print It : ajout d'un carrousel interactif en JavaScript sur un site statique existant.">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbarScroll navbarDark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Natalia Petrakova</a>
+            <a class="nav-link text-white" href="index.html#portfolio">&larr; Retour au portfolio</a>
+        </div>
+    </nav>
+
+    <!-- project hero -->
+    <header class="projectHero">
+        <div class="container">
+            <span class="badge projectBadge mb-3">Développement · Carrousel JavaScript</span>
+            <h1>Print It</h1>
+            <p class="lead">
+                Ajout d'un carrousel interactif en JavaScript sur un site statique existant, pour mettre en
+                pratique mes premiers pas en JavaScript et comprendre son interaction avec le HTML et le CSS.
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <p class="projectMetaLabel">Rôle</p>
+                    <p>Développeuse Front-End</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="projectMetaLabel">Livrable</p>
+                    <p>Carrousel interactif · HTML/CSS/JS</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="projectMetaLabel">Secteur</p>
+                    <p>Formation OpenClassrooms</p>
+                </div>
+            </div>
+
+            <a href="https://github.com/NataliaPetrakova/projet-print-it" target="_blank" rel="noopener" class="btn btn-success">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Voir le projet sur GitHub
+            </a>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+
+        <!-- contexte -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Contexte</p>
+            <h2>Mes premiers pas en JavaScript</h2>
+            <p>
+                J'ai commencé à apprendre JavaScript et ce projet m'a permis de le mettre en pratique pour la
+                première fois. Mon objectif était de rendre un site internet statique plus dynamique en y
+                ajoutant un carrousel interactif. Ce projet m'a donné un bon aperçu du développement web
+                interactif et m'a permis de faire mes premiers pas concrets en JavaScript.
+            </p>
+        </section>
+
+        <!-- mission / outils -->
+        <section class="projectSection">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="projectSectionLabel">Ma mission</p>
+                    <ul>
+                        <li>Mettre à jour le code HTML existant</li>
+                        <li>Ajouter un carrousel avec JavaScript</li>
+                        <li>Comprendre comment JavaScript interagit avec le HTML et le CSS</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <p class="projectSectionLabel">Outils</p>
+                    <p>Visual Studio Code pour écrire le code, GitHub pour enregistrer le travail et gérer les différentes versions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- démarche -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Démarche</p>
+            <h2>Les étapes que j'ai suivies</h2>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h3>01. Mise à jour du HTML</h3>
+                    <p>Adaptation de la structure existante pour intégrer les éléments nécessaires au carrousel.</p>
+                    <h3>02. Ajout d'event listeners sur les flèches</h3>
+                    <p>Mise en place des écouteurs d'événements pour permettre la navigation manuelle entre les slides.</p>
+                    <h3>03. Création de bullet points pour le carrousel</h3>
+                    <p>Ajout d'indicateurs visuels permettant de suivre et de sélectionner la slide active.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>04. Changement de slide au clic sur les boutons</h3>
+                    <p>Implémentation de la logique JavaScript déclenchant le changement de slide au clic.</p>
+                    <h3>05. Mise en place d'un défilement infini</h3>
+                    <p>Gestion des cas limites pour permettre un défilement continu, sans interruption en fin de liste.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- technologies -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Technologies</p>
+            <h2>Stack utilisée</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Visual Studio Code</li>
+                <li>Git / GitHub</li>
+                <li>DOM Events</li>
+            </ul>
+        </section>
+
+        <!-- réalisation -->
+<section class="projectSection">
+    <img src="images/image2.png" alt="Aperçu du carrousel du site Print it! en fonctionnement" class="projectScreenshot mt-3">
+</section>
+
+        <!-- bilan -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Bilan</p>
+            <h2>Ce que j'ai retenu</h2>
+            <p>
+                Ce projet a été une première mise en pratique concrète du JavaScript après une phase
+                d'apprentissage théorique. Il m'a permis de comprendre en profondeur comment le JavaScript
+                s'articule avec le HTML et le CSS pour créer des interactions dynamiques : gestion des
+                événements, manipulation du DOM, et logique de défilement infini.
+            </p>
+        </section>
+
+        <!-- code source -->
+        <section class="projectSection text-center">
+            <p class="projectSectionLabel">Code source</p>
+            <h2>Retrouver le projet sur GitHub</h2>
+            <p>
+                L'ensemble du code HTML/CSS/JavaScript est disponible en open source, accompagné de son
+                historique de versions.
+            </p>
+            <a href="https://github.com/NataliaPetrakova/projet-print-it" target="_blank" rel="noopener" class="btn btn-success">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Voir le projet sur GitHub
+            </a>
+        </section>
+
+        <div class="text-center mb-5">
+            <a href="index.html#portfolio" class="contactLink">&larr; Retour au portfolio</a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="siteFooter">
+        <div class="container text-center">
+            <p>&copy; 2026 Natalia Petrakova — <a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

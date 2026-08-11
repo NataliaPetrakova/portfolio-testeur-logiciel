@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Kasa — Projet React | Natalia Petrakova</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kasa : application web de location d'appartements entre particuliers, développée en React avec composants réutilisables et suite de tests unitaires.">
+    <!-- linking css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbarScroll navbarDark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Natalia Petrakova</a>
+            <a class="nav-link text-white" href="index.html#portfolio">&larr; Retour au portfolio</a>
+        </div>
+    </nav>
+
+    <!-- project hero -->
+    <header class="projectHero">
+        <div class="container">
+            <span class="badge projectBadge mb-3">Développement React · Application web</span>
+            <h1>Kasa</h1>
+            <p class="lead">
+                Application web de location d'appartements entre particuliers, développée en React :
+                composants réutilisables, navigation avec React Router, hooks personnalisés et suite de
+                tests unitaires complète.
+            </p>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <p class="projectMetaLabel">Rôle</p>
+                    <p>Développeuse Front-End React</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="projectMetaLabel">Livrable</p>
+                    <p>Application React · Tests Vitest</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="projectMetaLabel">Secteur</p>
+                    <p>Formation OpenClassrooms</p>
+                </div>
+            </div>
+
+            <a href="https://github.com/NataliaPetrakova/kasa" target="_blank" rel="noopener" class="btn btn-success">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Voir le projet sur GitHub
+            </a>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+
+        <!-- contexte -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Contexte</p>
+            <h2>Une application React de location entre particuliers</h2>
+            <p>
+                Kasa est une application web de location d'appartements entre particuliers, développée
+                intégralement en React à partir de maquettes Figma responsive.
+            </p>
+            <p>
+                Ma mission a été de développer l'ensemble de l'application : les composants React, les
+                routes React Router, la logique de récupération des données et la suite de tests
+                unitaires, en suivant fidèlement les maquettes fournies.
+            </p>
+        </section>
+
+        <!-- architecture / structure -->
+        <section class="projectSection">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="projectSectionLabel">Architecture</p>
+                    <ul>
+                        <li>7 composants React réutilisables</li>
+                        <li>React 18 avec Vite comme bundler</li>
+                        <li>React Router pour la navigation</li>
+                        <li>Hooks personnalisés pour la gestion des données</li>
+                        <li>Suite de tests unitaires avec Vitest</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <p class="projectSectionLabel">Structure du projet</p>
+                    <p>
+                        Organisation modulaire : <code>components/</code> pour les composants réutilisables,
+                        <code>pages/</code> pour les pages principales, <code>hooks/</code> pour la logique
+                        métier partagée, et un dossier <code>tests/</code> à côté de chaque composant.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- composants réutilisables -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Composants</p>
+            <h2>Des briques réutilisables</h2>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h3>Header</h3>
+                    <p>Composant global présent sur toutes les pages.</p>
+                    <ul>
+                        <li>Logo cliquable &rarr; retour à /home</li>
+                        <li>Navigation avec 2 liens</li>
+                        <li>Lien actif souligné automatiquement</li>
+                        <li>Hover : soulignement au survol</li>
+                        <li>Utilise &lt;Link&gt; de React Router</li>
+                        <li>Classe "active" dynamique</li>
+                        <li>Responsive : taille réduite sur mobile</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Card</h3>
+                    <p>Vignette cliquable affichant un logement, réutilisée sur la page d'accueil.</p>
+                    <ul>
+                        <li>Props : id, title, cover</li>
+                        <li>Image en arrière-plan (object-fit cover)</li>
+                        <li>Titre affiché en overlay</li>
+                        <li>Enveloppée dans un Link vers /logement/:id</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3>Gallery (carrousel)</h3>
+                    <p>Carrousel de photos sur la page Logement, avec navigation circulaire.</p>
+                    <ul>
+                        <li>Précédent sur image 1 &rarr; dernière image</li>
+                        <li>Suivant sur dernière image &rarr; image 1</li>
+                        <li>Compteur dynamique ("2/5")</li>
+                        <li>1 seule image &rarr; flèches et compteur masqués</li>
+                    </ul>
+                    <pre class="projectCode"><code>const [currentIndex, setCurrentIndex] = useState(0)
+
+const goToNext = () =&gt; {
+  setCurrentIndex(
+    currentIndex === pictures.length - 1 ? 0 : currentIndex + 1
+  )
+}</code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h3>Rating</h3>
+                    <p>Affiche la note du logement sous forme d'étoiles (composant d'affichage uniquement).</p>
+                    <ul>
+                        <li>Reçoit une note sur 5 en props</li>
+                        <li>Étoiles rouges pour la note, grises pour le reste</li>
+                        <li>Génération via .map() sur un tableau de 5 étoiles</li>
+                        <li>Classe conditionnelle selon la valeur</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3>Collapse</h3>
+                    <p>
+                        Accordéon interactif réutilisé sur la page Logement (description, équipements) et
+                        la page À Propos (4 valeurs de l'entreprise).
+                    </p>
+                    <ul>
+                        <li>Fermé par défaut au chargement</li>
+                        <li>Clic &rarr; affichage animé + rotation de la flèche à 180°</li>
+                        <li>Rendu conditionnel du contenu (optimisation)</li>
+                        <li>Transitions CSS pour des animations fluides</li>
+                    </ul>
+                    <pre class="projectCode"><code>const [isOpen, setIsOpen] = useState(false)
+const toggle = () =&gt; setIsOpen(!isOpen)
+
+{isOpen &amp;&amp; (
+  &lt;div className="collapse-content"&gt;{content}&lt;/div&gt;
+)}</code></pre>
+                </div>
+                <div class="col-md-6">
+                    <h3>Banner</h3>
+                    <p>
+                        Bannière d'en-tête utilisée sur la page d'accueil (avec texte) et la page À Propos
+                        (sans texte).
+                    </p>
+                    <ul>
+                        <li>Props : image, text</li>
+                        <li>Hauteur adaptée en responsive (223px desktop, 111px mobile)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- parcours utilisateur -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Pages de l'application</p>
+            <h2>Le parcours utilisateur</h2>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h3>Accueil - Catalogue de logements</h3>
+                    <p>
+                        Bannière avec image et slogan, puis une grille de cards (3 colonnes en desktop, 1 en
+                        mobile). Les données sont récupérées via le hook useFetch, qui gère le chargement,
+                        les erreurs (redirection vers 404) et l'affichage.
+                    </p>
+                    <h3>Logement - Détail d'une propriété (/logement/:id)</h3>
+                    <p>
+                        Structurée en 3 sections : carrousel d'images (Gallery) en haut, informations du
+                        logement et de l'hôte avec tags et note en étoiles (Rating) au milieu, puis deux
+                        collapses côte à côte (description et équipements) en bas.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>À propos - Valeurs de l'entreprise</h3>
+                    <p>
+                        Bannière avec image de paysage, suivie de 4 collapses (Fiabilité, Respect, Service,
+                        Sécurité) réutilisant le même composant Collapse que la page Logement — démonstration
+                        concrète de la réutilisabilité des composants React.
+                    </p>
+                    <h3>Page 404 - Gestion des erreurs de navigation</h3>
+                    <p>
+                        S'affiche dans 3 cas : URL invalide tapée par l'utilisateur, erreur API sur la page
+                        Home, ou ID de logement inexistant. Une route catch-all (*) dans React Router
+                        redirige toutes les URLs non définies vers cette page, avec un lien de retour vers
+                        l'accueil.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- hooks personnalisés -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Hooks personnalisés</p>
+            <h2>Centraliser la logique métier</h2>
+            <p>
+                J'ai créé un hook personnalisé useFetch pour centraliser la logique de récupération des
+                données depuis l'API. Ce hook gère trois états : data pour les données récupérées, loading
+                pour indiquer le chargement, et error en cas de problème. J'utilise useEffect pour lancer la
+                requête au montage du composant, et je mets à jour les états en fonction du résultat.
+            </p>
+            <p>
+                Cette approche évite de dupliquer la logique de récupération des données dans plusieurs
+                composants. En centralisant cette logique dans un hook réutilisable, le code devient plus
+                lisible, plus maintenable et plus facile à faire évoluer — les composants se concentrent
+                uniquement sur l'affichage.
+            </p>
+            <p>
+                La gestion des erreurs s'appuie sur ce même principe : trois cas distincts (URL invalide,
+                erreur API, ID de logement inexistant) redirigent tous vers la page 404 via le composant
+                Navigate de React Router, assurant une expérience utilisateur cohérente.
+            </p>
+        </section>
+
+        <!-- qualité & tests -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Qualité &amp; Tests</p>
+            <h2>Une couverture de test complète</h2>
+            <div class="row mt-3 text-center">
+                <div class="col-md-6">
+                    <h3 class="display-6">45</h3>
+                    <p>tests unitaires, tous passants</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="display-6">100%</h3>
+                    <p>de couverture de code</p>
+                </div>
+            </div>
+            <ul>
+                <li>Outils : Vitest (framework de test optimisé pour Vite) et React Testing Library</li>
+                <li>Tests des composants : Header, Banner, Card, Collapse, Gallery, Rating</li>
+                <li>Tests du hook useFetch : récupération des données, gestion des états loading/error</li>
+                <li>Tests des pages : rendu correct, redirection vers 404 en cas de logement inexistant</li>
+            </ul>
+        </section>
+
+        <!-- technologies -->
+        <section class="projectSection">
+            <p class="projectSectionLabel">Technologies</p>
+            <h2>Stack utilisée</h2>
+            <ul>
+                <li>React 18</li>
+                <li>Vite</li>
+                <li>React Router</li>
+                <li>Vitest</li>
+                <li>React Testing Library</li>
+                <li>CSS3 / Media Queries</li>
+                <li>Hooks personnalisés</li>
+                <li>Git / GitHub</li>
+            </ul>
+        </section>
+
+       <!-- réalisation -->
+        <section class="projectSection">
+            <img src="images/image3.png" alt="Aperçu de l'application Kasa" class="projectScreenshot mt-3">
+        </section>
+
+        <!-- code source -->
+        <section class="projectSection text-center">
+            <p class="projectSectionLabel">Code source</p>
+            <h2>Retrouver le projet sur GitHub</h2>
+            <p>
+                L'ensemble du code React ainsi que la suite de tests sont disponibles en open source.
+            </p>
+            <a href="https://github.com/NataliaPetrakova/kasa" target="_blank" rel="noopener" class="btn btn-success">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Voir le projet sur GitHub
+            </a>
+        </section>
+
+        <div class="text-center mb-5">
+            <a href="index.html#portfolio" class="contactLink">&larr; Retour au portfolio</a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="siteFooter">
+        <div class="container text-center">
+            <p>&copy; 2026 Natalia Petrakova — <a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
